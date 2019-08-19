@@ -19,8 +19,12 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <!-- Bulma Framework -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk=" crossorigin="anonymous" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" /></head>
@@ -82,18 +86,16 @@
             @auth
                 <div class="container">
                     <div class="columns">
-                        <div class="column if-half">
-                            <div class="list is-hoverable">
-                                <a href="#" class="list-item is-active">
-                                    Posts
-                                </a>
-                                <a href="#" class="list-item">
-                                    Categories
-                                </a>
+                        <div class="row">
+                            <div class="col s8">
+                                <div class="collection">
+                                    <a href="#" class="collection-item active">Posts</a>
+                                    <a href="#" class="collection-item">Categories</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="column is-two-thirds">
-                            @yield('content')
+                            <div class="col s4">
+                                @yield('content')
+                            </div>
                         </div>
                     </div>
                 </div>
