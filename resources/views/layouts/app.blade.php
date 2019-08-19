@@ -18,7 +18,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
+
+    <!-- Bulma Framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk=" crossorigin="anonymous" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" /></head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -73,7 +78,29 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+
+            @auth
+                <div class="container">
+                    <div class="columns">
+                        <div class="column if-half">
+                            <div class="list is-hoverable">
+                                <a href="#" class="list-item is-active">
+                                    Posts
+                                </a>
+                                <a href="#" class="list-item">
+                                    Categories
+                                </a>
+                            </div>
+                        </div>
+                        <div class="column is-two-thirds">
+                            @yield('content')
+                        </div>
+                    </div>
+                </div>
+            @else
+                @yield('content')
+            @endauth
+
         </main>
     </div>
 </body>
